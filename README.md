@@ -1,1 +1,1 @@
-# grocr-receipt-app
+# Grocr
