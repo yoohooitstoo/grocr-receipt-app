@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <label for="image_url">Image URL:</label>
+    <input type="text" id="image_url" />
+    <button id="submit">Submit</button>
+    <p></p>
+    <form id="form">
+      <input type="file" id="file" name="file" multiple />
+      <button id="ajax">Upload Base64 encoded binary data of the image</button>
+      <button id="fetch">Upload binary data of the image</button>
+    </form>
+    <p id="response"></p>
+    <script>
+            function ajaxAPICall(imgKey, imgValue) {
+              var settings = {
+                url: 'https://api-us.faceplusplus.com/facepp/v3/detect',
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                data: {
+                  api_key: 'Co5oybB11GYfrOv5t-gzWnkckQJ3r-Tr',
+                  api_secret: 'ZwhDNhz_5KQUmTMW7sKz-f9fU9i32H1m',
+                  [imgKey]: imgValue,
+                  return_attributes: 'gender,age,smiling,emotion,ethnicity,beauty'
+                }
+              };
+      ​
+              $.ajax(settings)
+                .then(function (response) {
+                  console.log(response);
+                  var responseStr = JSON.stringify(response);
+                  $('#response').text(responseStr);
+                })
+                .catch(function (err) {
+                  console.log(err.responseJSON);
+                });
+            }
+      ​
+            function fetchAPICall(formData) {
+              formData.append('api_key', 'Co5oybB11GYfrOv5t-gzWnkckQJ3r-Tr');
+              formData.append('api_secret', 'ZwhDNhz_5KQUmTMW7sKz-f9fU9i32H1m');
+              formData.append(
+                'return_attributes',
+                'gender,age,smiling,emotion,ethnicity,beauty'
+              );
+      ​
+              var settings = {
+                method: 'POST',
+                body: formData
+              };
+      ​
+              fetch('https://api-us.faceplusplus.com/facepp/v3/detect', settings)
+                .then(function (response) {
+                  if (response.status !== 200) {
+                    console.log(
+                      'Looks like there was a problem. Status Code: ' +
+                        response.status
+                    );
+                    return;
+                  }
+      ​
+                  response.json().then(function (data) {
+                    console.log(data);
+                    console.log(response);
+                    var responseStr = JSON.stringify(data);
+                    $('#response').text(responseStr);
+                  });
+                })
+                .catch(function (err) {
+                  console.log(err.responseJSON);
+                });
+            }
+      ​
+            $('#fetch').on('click', function (e) {
+              e.preventDefault();
+              var formData = new FormData();
+              var file = $('#file').prop('files')[0];
+              formData.append('image_file', file);
+              fetchAPICall(formData);
+            });
+      ​
+            $('#submit').on('click', function () {
+              var imageURL = $('#image_url').val();
+      ​
+              ajaxAPICall('image_url', imageURL);
+            });
+      ​
+            $('#ajax').on('click', function (e) {
+              e.preventDefault();
+              var file_data = $('#file').prop('files')[0];
+              var reader = new FileReader();
+      ​
+              reader.addEventListener('load', function () {
+                ajaxAPICall('image_base64', reader.result);
+              });
+      ​
+              if (file_data) {
+                reader.readAsDataURL(file_data);
+              }
+            });
+    </script>
+  </body>
+</html>
