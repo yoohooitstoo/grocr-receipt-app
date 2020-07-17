@@ -1,30 +1,23 @@
 {
-  "name": "grocr-receipt-app",
+  "name": "Grocr",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/yoohooitstoo/grocr-receipt-app.git"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/yoohooitstoo/grocr-receipt-app/issues"
-  },
-  "homepage": "https://github.com/yoohooitstoo/grocr-receipt-app#readme",
   "dependencies": {
-    "2": "^3.0.0",
-    "bcryptjs": "^2.4.3",
-    "express": "^4.17.1",
-    "express-session": "^1.17.1",
-    "mysql": "^2.18.1",
-    "passport": "^0.4.1",
+    "bcryptjs": "2.4.3",
+    "express": "^4.17.0",
+    "express-session": "^1.16.1",
+    "mysql2": "^1.6.5",
+    "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "sequelize": "^6.3.3"
+    "sequelize": "^5.8.6"
   }
 }
