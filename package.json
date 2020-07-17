@@ -1,0 +1,30 @@
+{
+  "name": "grocr-receipt-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yoohooitstoo/grocr-receipt-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yoohooitstoo/grocr-receipt-app/issues"
+  },
+  "homepage": "https://github.com/yoohooitstoo/grocr-receipt-app#readme",
+  "dependencies": {
+    "2": "^3.0.0",
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "mysql": "^2.18.1",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "sequelize": "^6.3.3"
+  }
+}
