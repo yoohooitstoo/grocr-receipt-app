@@ -50,4 +50,47 @@ module.exports = function(app) {
       });
     }
   });
+
+
+  /////
+app.get("/api/purchases", function(req, res) {
+  db.Purchases.findAll({}).then(function(dbPurchases) {
+    res.json(dbPurchases);
+  });
+});
+
+app.post("/api/purchases", function(req, res) {
+  db.Purchases.create({
+    text: req.body.text,
+    complete: req.body.complete
+  }).then(function(dbPurchases) {
+    res.json(dbPurchases);
+  })
+  .catch(function(err) {
+    res.json(err);
+  })
+});
+
+app.delete("api/purchases/:id", function(req, res) {
+  db.Purchases.destroy({
+    where: {
+      id: req.params.id
+    }
+  });
+});
+
+app.put("/api/purchases", function(req, res) {
+  db.Purchase.update({
+    text: req.body.text,
+    complete: req.body.complete
+  }, {
+    where: {
+      id: req.body.id
+    }
+  }).then(function(dbPurchases) {
+    res.json(dbTodo);
+  }).catch(function(err) {
+    res.json(err);
+  });
+});
 };
