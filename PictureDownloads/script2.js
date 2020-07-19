@@ -1,4 +1,4 @@
-$('#ajax-veryfi').on('click', function (e) {
+$("#ajax-veryfi").on("click", function (e) {
     e.preventDefault();
     const file_data = $('#file').prop('files')[0];
     const file_name = $('#file').prop('files')[0].name;
