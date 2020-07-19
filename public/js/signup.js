@@ -38,7 +38,7 @@ $(document).ready(function() {
     })
       .then(function(data) {
         console.log(data);
-        window.location.replace("/members");
+        window.location.replace("/grocery-list");
         // If there's an error, handle it by throwing up a bootstrap alert
       })
       .catch(handleLoginErr);

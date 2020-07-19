@@ -1,4 +1,79 @@
-form.signup,
+nav{
+    border-bottom: navy 10px solid;
+    height:100px;
+}
+body{
+    background-color:#25744d;
+    color:white;
+    font-family: 'Martel', serif;
+}
+h1{
+    font-size:30px;
+}
+#nav-logo{
+    margin-top: 1rem;
+    font-size:3rem;
+}
+.validate{
+    background-color:white;
+}
+#login-btn, #signup-btn, #submit-btn{
+    border-radius: 16px;
+    background-color:#ffbe42;
+}
+#view-btn, #logout-btn,#upload-btn{
+    border-radius: 16px;
+}
+#view-btn,#upload-btn{
+    margin-left:5rem;
+    margin-top:10px;
+}
+#logout-btn{
+    margin-right:5rem;
+    margin-top:20px;
+}
+form{
+    height: auto;
+}
+#img-area{
+    margin-top:10rem;
+    color:white;
+}
+#email-input,#last-name-input,#first-name-input,#password-input{
+    border-radius:16px;
+    background-color:white;
+}
+#signup-form{
+    margin-top:10rem;
+}
+#list-area,#form-area{
+    margin-top:10rem;
+}
+#add-icon{
+    color:green;
+}
+#remove-icon{
+    color:red;
+}
+
+/* form.signup,
 form.login {
   margin-top: 50px;
+} */
+
+.file-path{
+    color: white;
+    font-family: 'Martel', serif;
+}
+.purchase, a {
+    color: white;
+    font-family: 'Martel', serif;
+}
+#storeLogoUrl{
+   width: 100px;
+   height: 100px;
+}
+#store,#total{
+    color: white;
+    font-family: 'Martel', serif;
 }
