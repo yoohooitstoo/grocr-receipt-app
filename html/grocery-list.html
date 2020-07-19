@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize-->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Martel:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Grocr</title>
+</head>
+
+<body>
+    <nav class="nav-wrapper yellow accent-4">
+        <button class="btn green" id="upload-btn">UPLOAD</button>
+        <a href="/" class="brand-logo center" id="nav-logo">Grocr</a>
+        <button class="btn green right" id="logout-btn">LOGOUT</button>
+    </nav>
+
+    <div class="container">
+        <div class="row" id="list-area">
+            <!-- list of current receipt purchases -->
+            <div class="col s6">
+                <h5>Grocery List</h5>
+                <ul>
+                    <li>
+                        <div class="col s4">
+                            <!-- item name -->
+                            <p id="item">ITEM</p>
+                        </div>
+                        <div class="col s4">
+                            <!-- price -->
+                            <p id="current-price">$0.00</p>
+                        </div>
+                        <button class="btn-floating orange btn-small"><i class="small material-icons"
+                                id="remove-icon">remove</i></button>
+                    </li>
+                </ul>
+            </div>
+            <!-- list of past items -->
+            <div class="col s6">
+                <h5>Previously Ordered</h5>
+                <div class="col s4">
+                    <!-- item name -->
+                    <p id="previous-item">ITEM</p>
+                </div>
+                <div class="col s4">
+                    <!-- price -->
+                    <p id="previous-price">$0.00</p>
+                </div>
+                <button class="btn-floating orange btn-small"><i class="small material-icons"
+                        id="add-icon">add</i></button>
+                <button class="btn-floating orange btn-small"><i class="small material-icons"
+                        id="remove-icon">remove</i></button>
+            </div>
+        </div>
+    </div>
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+
+</html>
