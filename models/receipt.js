@@ -12,7 +12,7 @@ module.exports = function(sequelize, DataTypes) {
     });
     Receipt.belongsTo(models.User, {
         foreignKey: {
-          allowNull: false,
+          allowNull: true,
         } 
       });
       Receipt.hasMany(models.Purchases, {

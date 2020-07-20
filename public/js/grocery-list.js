@@ -20,8 +20,15 @@ let purchases = [];
 getPurchases();
 
 function addPurchase() {
+  let newItem = {
+    description: $("#add-text-box").val().trim(),
 
-  console.log($("#add-text-box").val());
+  };
+
+  $.post("/api/purchases", newItem)
+  .then(function(data){
+    console.log(data)
+  })
 }
 
 // function initializeRows() {
