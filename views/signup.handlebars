@@ -2,40 +2,39 @@
         <a href="/" class="brand-logo center" id="nav-logo">Grocr</a>
     </nav>
     <div class="container">
-        <form class="row" id="form-area">
+        <form class="row signup" id="form-area">
             <div class="row">
                 <div class="input-field col offset-s4 s4">
                     <span>Email</span>
-                    <input id="email" type="email" class="validate">
+                    <input id="email-input" type="email" class="validate">
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col offset-s4 s4">
                     <p>First Name</p>
-                    <input id="fname" type="text" class="validate">
+                    <input id="first-name-input" type="text" class="validate">
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col offset-s4 s4">
                     <p>Last Name</p>
-                    <input id="lname" type="text" class="validate">
+                    <input id="last-name-input" type="text" class="validate">
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col offset-s4 s4">
                     <p>Password</p>
-                    <input id="password" type="password" class="validate">
+                    <input id="password-input" type="password" class="validate">
                 </div>
             </div>
-            <div class="row">
+            {{!-- <div class="row">
                 <div class="input-field col offset-s4 s4">
                     <p>Confirm Password</p>
                     <input id="confirm-password" type="password" class="validate">
                 </div>
-            </div>
+            </div> --}}
             <div class="row center">
                 <button class="btn" id="submit-btn">SUBMIT</button>
             </div>
         </form>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="/js/signup.js"></script>
