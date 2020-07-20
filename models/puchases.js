@@ -8,11 +8,11 @@ module.exports = function(sequelize, DataTypes) {
         }
       },
       sku: {
-        type: DataTypes.INT,
+        type: DataTypes.INTEGER,
         allowNull: true,
       },
       item_price: {
-          type: DataTypes.INT,
+          type: DataTypes.INTEGER,
           allowNull: true,
       },
     });
@@ -30,7 +30,6 @@ module.exports = function(sequelize, DataTypes) {
           }
       })
     };
-  
-    return Post;
+    return Purchases;
   };
   

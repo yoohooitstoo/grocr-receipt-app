@@ -1,6 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
     var Grocerylist = sequelize.define("Grocerylist", {
-
     });
 
   Grocerylist.associate = function(models) {
