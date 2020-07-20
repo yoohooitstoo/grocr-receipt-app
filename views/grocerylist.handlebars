@@ -41,41 +41,51 @@
             </div>
         </form>
     </div>
-    <div class="row" id="list-area">
+        <div class="row" id="list-area">
         <!-- list of current receipt purchases -->
         <div class="col s6">
             <h5>Grocery List</h5>
             <ul>
+                {{#each grocery}}
+                {{#if purchase}}
                 <li>
                     <div class="col s4">
                         <!-- item name -->
-                        <p id="purchases">ITEM</p>
+                        <p id="purchases">{{this.description}}</p>
                     </div>
                     <div class="col s4">
                         <!-- price -->
-                        <p id="current-price">$0.00</p>
+                        <p id="current-price">${{this.item_price}}</p>
                     </div>
-                    <button class="btn-floating orange btn-small"><i class="small material-icons"
-                            id="move-icon">move</i></button>
-                    <button class="btn-floating orange btn-small"><i class="small material-icons"
-                            id="edit-icon">edit</i></button>
+                    <button class="btn-floating orange btn-small" data-id={{id}}><i class="small material-icons"
+                            id="remove-icon">remove</i></button>
                 </li>
+                {{/if}}
+                {{/each}}
             </ul>
         </div>
         <!-- list of past items -->
         <div class="col s6">
             <h5>Previously Ordered</h5>
-            <div class="col s4">
-                <!-- item name -->
-                <p id="previous-item">ITEM</p>
-            </div>
-            <div class="col s4">
-                <!-- price -->
-                <p id="previous-price">$0.00</p>
-            </div>
-            <button class="btn-floating orange btn-small"><i class="small material-icons" id="add-icon">add</i></button>
-            <button class="btn-floating orange btn-small"><i class="small material-icons"
-                    id="remove-icon">remove</i></button>
+            <ul>
+                {{#each grocery}}
+                {{#unless purchase}}
+                <li>
+                    <div class="col s4">
+                        <!-- item name -->
+                        <p id="previous-item">{{this.description}}</p>
+                    </div>
+                    <div class="col s4">
+                        <p id="previous-price">${{this.item_price}}</p>
+                    </div>
+                    <button class="btn-floating orange btn-small" data-id={{id}}><i class="small material-icons"
+                            id="add-icon">add</i></button>
+                    <button class="btn-floating orange btn-small" data-id={{id}}><i class="small material-icons"
+                            id="remove-icon">remove</i></button>
+                </li>
+                {{/unless}}
+                {{/each}}
+            </ul>
         </div>
     </div>
     <script src="/js/grocery-list.js"></script>
