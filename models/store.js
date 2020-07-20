@@ -8,16 +8,17 @@ module.exports = function(sequelize, DataTypes) {
             }
         }
     })
-    };
+
 
   Store.associate = function(models) {
     // We're saying that a Post should belong to an Author
     // A Post can't be created without an Author due to the foreign key constraint
     Store.hasMany(models.Receipt, {
       foreignKey: {
-        allowNull: false
+        allowNull: false,
+        onDelete: "cascade"
       } 
     });
-
+    };
   return Store;
 };

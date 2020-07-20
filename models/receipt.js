@@ -12,9 +12,15 @@ module.exports = function(sequelize, DataTypes) {
     });
     Receipt.belongsTo(models.User, {
         foreignKey: {
-          allowNull: false
+          allowNull: false,
         } 
       });
+      Receipt.hasMany(models.Purchases, {
+        foreignKey: {
+          allowNull: true,
+          onDelete: "cascade"
+        }
+      })
   };
 
   return Receipt;
