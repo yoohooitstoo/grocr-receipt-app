@@ -33,9 +33,11 @@
         <form class="col s12">
             <div class="row">
                 <div class="input-field col s6">
-                    <i class="material-icons prefix">mode_edit</i>
-                    <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-                    <label for="icon_prefix2">Add Item to Grocery List</label>
+                    <form class="add-item-form">
+                    <i class="material-icons prefix" id="add-button">mode_edit</i>
+                    <textarea id="add-text-box" class="materialize-textarea"></textarea>
+                    <label for="add-text-box">Add Item to Grocery List</label>
+                    </form>
                 </div>
             </div>
         </form>
@@ -45,7 +47,7 @@
         <div class="col s6">
             <h5>Grocery List</h5>
             <ul>
-                {{#each grocery}}
+                {{#each Purchases}}
                 {{#if purchase}}
                 <li>
                     <div class="col s4">
