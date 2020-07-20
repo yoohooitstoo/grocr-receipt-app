@@ -9,23 +9,30 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/grocery-list");
+      res.render("grocerylist", req.body);
     }
-    res.sendFile(path.join(__dirname, "../public/home-page.html"));
+    res.render("index", req.body);
   });
 
   app.get("/signup", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/grocery-list");
+      res.render("grocerylist", req.body);
     }
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
+    res.render("signup", req.body);
   });
 
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/grocery-list", isAuthenticated, function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/grocery-list.html"));
+    res.render("grocerylist", req.body);
   });
+
+    // Here we've add our isAuthenticated middleware to this route.
+  // If a user who is not logged in tries to access this route they will be redirected to the signup page
+  app.get("/upload", isAuthenticated, function(req, res) {
+    res.render("upload", req.body);
+  });
+  
 
 };
