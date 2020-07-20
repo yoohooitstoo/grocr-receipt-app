@@ -38,7 +38,7 @@ $(document).ready(function() {
     })
       .then(function(data) {
         console.log(data);
-        window.location.replace("/grocery-list");
+        // window.location.replace("/grocery-list");
         // If there's an error, handle it by throwing up a bootstrap alert
       })
       .catch(handleLoginErr);
@@ -48,4 +48,11 @@ $(document).ready(function() {
     $("#alert .msg").text(err.responseJSON);
     $("#alert").fadeIn(500);
   }
+
 });
+
+
+$("#signup-btn").on("click", function(event){
+  event.preventDefault();
+  console.log("click works")
+})
