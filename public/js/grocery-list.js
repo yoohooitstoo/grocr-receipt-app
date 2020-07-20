@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  
   const purchases = $("#purchases");
 $(document).on("click", "remove-icon", removePurchases);
 $(document).on("click", "add-icon", addPurchases);

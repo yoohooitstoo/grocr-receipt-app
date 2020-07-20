@@ -74,13 +74,15 @@ module.exports = function(app) {
     res.json(err);
   })
   });
-
+// DELETE route for deleting purchases.
   app.delete("api/purchases/:id", function(req, res) {
   db.Purchases.destroy({
     where: {
       id: req.params.id
     }
-  });
+  }).then(function(dbPurchases){
+    res.json(dbPurchases);
+  })
   });
 
   app.put("/api/purchases", function(req, res) {
@@ -92,7 +94,7 @@ module.exports = function(app) {
       id: req.body.id
     }
   }).then(function(dbPurchases) {
-    res.json(dbTodo);
+    res.json(dbPurchases);
   }).catch(function(err) {
     res.json(err);
   });
