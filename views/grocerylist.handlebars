@@ -1,45 +1,54 @@
-  <nav class="nav-wrapper yellow accent-4">
-        <button class="btn green" id="upload-btn">UPLOAD</button>
-        <a href="/" class="brand-logo center" id="nav-logo">Grocr</a>
-        <button class="btn green right" id="logout-btn">LOGOUT</button>
-    </nav>
+<nav class="nav-wrapper yellow accent-4">
+    <button class="btn green" id="upload-btn">UPLOAD</button>
+    <a href="/" class="brand-logo center" id="nav-logo">Grocr</a>
+    <button class="btn green right" id="logout-btn">LOGOUT</button>
+</nav>
 
-    <div class="container">
-        <div class="row" id="list-area">
-            <!-- list of current receipt purchases -->
-            <div class="col s6">
-                <h5>Grocery List</h5>
-                <ul>
-                    <li>
-                        <div class="col s4">
-                            <!-- item name -->
-                            <p id="item">ITEM</p>
-                        </div>
-                        <div class="col s4">
-                            <!-- price -->
-                            <p id="current-price">$0.00</p>
-                        </div>
-                        <button class="btn-floating orange btn-small"><i class="small material-icons"
-                                id="remove-icon">remove</i></button>
-                    </li>
-                </ul>
-            </div>
-            <!-- list of past items -->
-            <div class="col s6">
-                <h5>Previously Ordered</h5>
-                <div class="col s4">
-                    <!-- item name -->
-                    <p id="previous-item">ITEM</p>
+<div class="container">
+    <div class="row">
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">mode_edit</i>
+                    <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+                    <label for="icon_prefix2">Add Item to Grocery List</label>
                 </div>
-                <div class="col s4">
-                    <!-- price -->
-                    <p id="previous-price">$0.00</p>
-                </div>
-                <button class="btn-floating orange btn-small"><i class="small material-icons"
-                        id="add-icon">add</i></button>
-                <button class="btn-floating orange btn-small"><i class="small material-icons"
-                        id="remove-icon">remove</i></button>
             </div>
+        </form>
+    </div>
+    <div class="row" id="list-area">
+        <!-- list of current receipt purchases -->
+        <div class="col s6">
+            <h5>Grocery List</h5>
+            <ul>
+                <li>
+                    <div class="col s4">
+                        <!-- item name -->
+                        <p id="item">ITEM</p>
+                    </div>
+                    <div class="col s4">
+                        <!-- price -->
+                        <p id="current-price">$0.00</p>
+                    </div>
+                    <button class="btn-floating orange btn-small"><i class="small material-icons"
+                            id="remove-icon">remove</i></button>
+                </li>
+            </ul>
+        </div>
+        <!-- list of past items -->
+        <div class="col s6">
+            <h5>Previously Ordered</h5>
+            <div class="col s4">
+                <!-- item name -->
+                <p id="previous-item">ITEM</p>
+            </div>
+            <div class="col s4">
+                <!-- price -->
+                <p id="previous-price">$0.00</p>
+            </div>
+            <button class="btn-floating orange btn-small"><i class="small material-icons" id="add-icon">add</i></button>
+            <button class="btn-floating orange btn-small"><i class="small material-icons"
+                    id="remove-icon">remove</i></button>
         </div>
     </div>
     <script src="/js/grocery-list.js"></script>
