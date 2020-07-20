@@ -21,8 +21,8 @@ module.exports = function(app) {
       password: req.body.password
     })
       .then(function() {
-        console.log(req.body)
-        // res.render("grocery-list", req.body);
+        // console.log(req.body)
+        window.location.replace("/grocery-list");
       })
       .catch(function(err) {
         res.status(401).json(err);
