@@ -18,6 +18,7 @@ $(document).ready(function() {
 
     // If we have an email and password we run the loginUser function and clear the form
     loginUser(userData.email, userData.password);
+    console.log("click worked")
     emailInput.val("");
     passwordInput.val("");
   });
@@ -36,9 +37,11 @@ $(document).ready(function() {
         console.log(err);
       });
   }
+
+  $("#signup-btn").on("click", function(event){
+    event.preventDefault();
+    console.log("click works")
+  })
 });
 
-$("#login-btn").on("click", function(event){
-  event.preventDefault();
-  console.log("click works");
-})
+
