@@ -81,3 +81,12 @@ form.login {
     color: white;
     font-family: 'Martel', serif;
 }
+#info-para{
+    font-size:28px;
+}
+.row{
+    margin-bottom:0px;
+}
+.login-spacing{
+    margin-bottom:1rem;
+}
