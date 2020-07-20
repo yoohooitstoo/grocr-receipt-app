@@ -46,6 +46,10 @@ form{
 #signup-form{
     margin-top:10rem;
 }
+.loginbtn{
+    margin-left:5rem;
+    margin-top:10px;
+}
 #list-area,#form-area{
     margin-top:10rem;
 }
