@@ -54,15 +54,18 @@ module.exports = function(app) {
 
 
   /////
-app.get("/api/purchases", function(req, res) {
+  // GET route for getting all of the items added by the user 
+  // needs to modify to include added from the receipt
+  app.get("/api/purchases", function(req, res) {
   db.Purchases.findAll({}).then(function(dbPurchases) {
     res.json(dbPurchases);
   });
-});
+  });
 
-app.post("/api/purchases", function(req, res) {
+// Post route for saving a new purchase
+  app.post("/api/purchases", function(req, res) {
   db.Purchases.create({
-    text: req.body.text,
+    description: req.body.description,
     complete: req.body.complete
   }).then(function(dbPurchases) {
     res.json(dbPurchases);
@@ -70,19 +73,19 @@ app.post("/api/purchases", function(req, res) {
   .catch(function(err) {
     res.json(err);
   })
-});
+  });
 
-app.delete("api/purchases/:id", function(req, res) {
+  app.delete("api/purchases/:id", function(req, res) {
   db.Purchases.destroy({
     where: {
       id: req.params.id
     }
   });
-});
+  });
 
-app.put("/api/purchases", function(req, res) {
+  app.put("/api/purchases", function(req, res) {
   db.Purchase.update({
-    text: req.body.text,
+    description: req.body.description,
     complete: req.body.complete
   }, {
     where: {
@@ -93,5 +96,5 @@ app.put("/api/purchases", function(req, res) {
   }).catch(function(err) {
     res.json(err);
   });
-});
+  });
 };
