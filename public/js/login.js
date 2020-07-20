@@ -37,3 +37,8 @@ $(document).ready(function() {
       });
   }
 });
+
+$("#login-btn").on("click", function(event){
+  event.preventDefault();
+  console.log("click works");
+})
