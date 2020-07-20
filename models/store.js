@@ -15,7 +15,7 @@ module.exports = function(sequelize, DataTypes) {
     // A Post can't be created without an Author due to the foreign key constraint
     Store.hasMany(models.Receipt, {
       foreignKey: {
-        allowNull: false,
+        allowNull: true,
         onDelete: "cascade"
       } 
     });
