@@ -50,9 +50,9 @@ form{
     margin-left:5rem;
     margin-top:10px;
 }
-#list-area,#form-area{
+/* #list-area,#form-area{
     margin-top:10rem;
-}
+} */
 #add-icon{
     color:green;
 }
@@ -89,4 +89,10 @@ form.login {
 }
 .login-spacing{
     margin-bottom:1rem;
+}
+.store-info{
+    margin-top:1rem;
+}
+.receipt-area{
+    margin-top:1rem;
 }

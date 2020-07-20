@@ -4,45 +4,47 @@
 </nav>
 
 <div class="container">
-    <div class="file-field input-field">
-        <div class="btn">
-            <span>Select Receipt</span>
-            <input type="file" id="file" name="file">
+    <div class="row receipt-area">
+        <div class="col">
+            <div class="file-field input-field">
+                <div class="btn">
+                    <span>Select Receipt</span>
+                    <input type="file" id="file" name="file">
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button class="btn center-align" id="ajax-veryfi">Add to List</button>
+                </div>
+            </div>
         </div>
-        <div class="file-path-wrapper">
-            <input class="file-path validate" type="text">
+    </div>
+    <div class="row store-info">
+        <div class="col s2">
+            <image id="storeLogoUrl"></image>
         </div>
-    </div>
-    <div class="row">
-        <button class="btn center-align" id="ajax-veryfi">Add to List</button>
-    </div>
-    <div class ="row">
-       <image id= "storeLogoUrl"></image> 
-    </div>
-    <div>
-  <p id= "store">Store Visited: </p>
-  </div>
-<div>
-  <ul class= "purchase"> </ul>
-</div>
-    <div>
-      <p id = "total">Total Cost: $</p> 
+        <div class="col s10">
+            <p id="store">Store Visited: </p>
+            <ul class="purchase"> </ul>
+            <p id="total">Total Cost: $</p>
+        </div>
     </div>
 
-    <div class="row">
+    <div class="row center">
         <form class="col s12">
-            <div class="row">
-                <div class="input-field col s6">
-                    <form class="add-item-form">
+            <div class="input-field col s6">
+                <form class="add-item-form">
                     <i class="material-icons prefix" id="add-button">mode_edit</i>
                     <textarea id="add-text-box" class="materialize-textarea"></textarea>
                     <label for="add-text-box">Add Item to Grocery List</label>
-                    </form>
-                </div>
+                </form>
             </div>
         </form>
     </div>
-        <div class="row" id="list-area">
+    <div class="row" id="list-area">
         <!-- list of current receipt purchases -->
         <div class="col s6">
             <h5>Grocery List</h5>
