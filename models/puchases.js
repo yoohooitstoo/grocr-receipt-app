@@ -9,9 +9,11 @@ module.exports = function(sequelize, DataTypes) {
       },
       sku: {
         type: DataTypes.INT,
+        allowNull: true,
       },
       item_price: {
-          type: DataTypes.INT
+          type: DataTypes.INT,
+          allowNull: true,
       },
     });
   
