@@ -40,7 +40,7 @@ $(document).ready(function() {
 
   $("#signup-btn").on("click", function(event){
     event.preventDefault();
-    console.log("click works")
+    window.location.replace("/signup");
   })
 });
 
