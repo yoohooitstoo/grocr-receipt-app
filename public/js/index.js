@@ -11,4 +11,8 @@ $(document).ready(function () {
     event.preventDefault();
     window.location.replace("/logout");
   })
+  $("#login-page-btn").on("click", function(event){
+    event.preventDefault();
+    window.location.replace("/");
+  })
 });
