@@ -15,10 +15,10 @@ module.exports = function(sequelize, DataTypes) {
           type: DataTypes.INTEGER,
           allowNull: true,
       },
-      complete: {
-        type: DataTypes.BOOLEAN,
-        allowNull: true,
-      }
+      // complete: {
+      //   type: DataTypes.BOOLEAN,
+      //   allowNull: true,
+      // }
     });
   
     // Purchases.associate = function(models) {
