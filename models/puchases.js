@@ -17,26 +17,23 @@ module.exports = function(sequelize, DataTypes) {
       },
       complete: {
         type: DataTypes.BOOLEAN,
-
-        allowNull: true,
-  09c1cb3cfb2c23b47d0958f7248a349d6246a1a7
         default: false,
-        34b2b9002a703023560689392c71ae6660397bea
-      }
+        allowNull: true,
+      },
     });
   
     Purchases.associate = function(models) {
 
-      Purchases.belongsTo(models.Grocerylist, {
+      Purchases.belongsTo(models.User, {
         foreignKey: {
-          allowNull: true
+          allowNull: false
         }
       });
-      Purchases.belongsTo(models.Receipt, {
-          foreignKey: {
-              allowNull: true
-          }
-      })
+    //   Purchases.belongsTo(models.Receipt, {
+    //       foreignKey: {
+    //           allowNull: true
+    //       }
+    //   })
     };
     return Purchases;
   };
