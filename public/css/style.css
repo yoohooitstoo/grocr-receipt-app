@@ -17,7 +17,7 @@ h1{
 .validate{
     background-color:white;
 }
-#login-btn, #signup-btn, #submit-btn{
+#login-btn, #signup-btn, #submit-btn,#select-receipt,#ajax-veryfi{
     border-radius: 16px;
     background-color:#ffbe42;
 }
@@ -39,7 +39,7 @@ form{
     margin-top:10rem;
     color:white;
 }
-#email-input,#last-name-input,#first-name-input,#password-input{
+#email-input,#last-name-input,#first-name-input,#password-input,#add-text-box{
     border-radius:16px;
     background-color:white;
 }
