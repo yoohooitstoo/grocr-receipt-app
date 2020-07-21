@@ -55,7 +55,7 @@
                     <!-- price -->
                     <p id="current-price">${{this.item_price}}</p>
                 </div>
-                <button class="btn-floating orange waves-effect hoverable waves-light btn-small"><i class="small material-icons remove-icon" data-id={{id}}
+                <button class="btn-floating orange waves-effect hoverable waves-light btn-small"><i class="small material-icons remove-icon" id="removing-icon" data-id={{id}}
                         data-complete={{complete}}>remove</i></button>
             </li>
             {{/unless}}
@@ -77,9 +77,9 @@
                 <div class="col s4">
                     <p id="previous-price">${{this.item_price}}</p>
                 </div>
-                <button class="btn-floating orange waves-effect hoverable waves-light btn-small"><i class="small material-icons add-icon" data-id={{id}}
+                <button class="btn-floating orange waves-effect hoverable waves-light btn-small"><i class="small material-icons add-icon" id="adding-icon" data-id={{id}}
                         data-complete={{complete}}>add</i></button>
-                <button class="btn-floating orange waves-effect hoverable waves-light btn-small"><i class="small material-icons delete-icon" data-id={{id}}
+                <button class="btn-floating orange waves-effect hoverable waves-light btn-small"><i class="small material-icons delete-icon" id="deleting-icon"data-id={{id}}
                         data-complete={{complete}}>clear</i></button>
             </li>
             {{/if}}

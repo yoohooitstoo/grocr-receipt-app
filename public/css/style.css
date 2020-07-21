@@ -51,10 +51,10 @@ form{
     margin-top:10px;
 }
 
-#add-icon{
+#adding-icon{
     color:green;
 }
-#remove-icon{
+#deleting-icon,#removing-icon{
     color:red;
 }
 
