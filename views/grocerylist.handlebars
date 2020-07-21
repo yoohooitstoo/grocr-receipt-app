@@ -1,9 +1,10 @@
 <nav class="nav-wrapper yellow accent-4">
     Done 'n Dusted
     <button class="btn green right" id="logout-btn">LOGOUT</button>
+
 </nav>
 
-<div class="container">
+<main class="container">
     <div class="row receipt-area">
         <div class="col">
             <div class="file-field input-field">
@@ -21,71 +22,73 @@
         </div>
     </div>
 
-<div class="row store-info">
-    <div class="col s2">
-        <image id="storeLogoUrl"></image>
-    </div>
-</div>
-
-<div class="row" id="adding-new-items">
-    <form class="col s12 offset-s2">
-        <div class="input-field col s6">
-            <form class="add-item-form">
-                <textarea id="add-field" class="materialize-textarea"></textarea>
-                <i class="material-icons prefix" id="add-button">mode_edit</i>
-                <label for="add-field">Add Item to Grocery List</label>
-            </form>
+    <div class="row store-info">
+        <div class="col s2">
+            <image id="storeLogoUrl"></image>
         </div>
-    </form>
-</div>
-<div class="row" id="list-area">
-    <!-- list of current receipt purchases -->
-    <div class="col s6">
-        <h5>Done</h5>
-        <ul>
-            {{#each Purchases}}
-            {{#unless complete}}
-            {{!-- {{> complete=false}} --}}
-            <li class="row">
-                <div class="col s4">
-                    <!-- item name -->
-                    <p id="purchases">{{this.description}}</p>
-                </div>
-                <div class="col s4">
-                    <!-- price -->
-                    <p id="current-price">${{this.item_price}}</p>
-                </div>
-                <button class="btn-floating orange waves-effect hoverable waves-light btn-small"><i class="small material-icons remove-icon" id="removing-icon" data-id={{id}}
-                        data-complete={{complete}}>remove</i></button>
-            </li>
-            {{/unless}}
-            {{/each}}
-        </ul>
     </div>
-    <!-- list of past items -->
-    <div class="col s6">
-        <h5>Dusted</h5>
-        <ul>
-            {{#each Purchases}}
-            {{#if complete}}
-            {{!-- {{> complete=true}} --}}
-            <li class="row">
-                <div class="col s4">
-                    <!-- item name -->
-                    <p id="previous-item">{{this.description}}</p>
-                </div>
-                <div class="col s4">
-                    <p id="previous-price">${{this.item_price}}</p>
-                </div>
-                <button class="btn-floating orange waves-effect hoverable waves-light btn-small"><i class="small material-icons add-icon" id="adding-icon" data-id={{id}}
-                        data-complete={{complete}}>add</i></button>
-                <button class="btn-floating orange waves-effect hoverable waves-light btn-small"><i class="small material-icons delete-icon" id="deleting-icon"data-id={{id}}
-                        data-complete={{complete}}>clear</i></button>
-            </li>
-            {{/if}}
-            {{/each}}
-        </ul>
+
+    <div class="row" id="adding-new-items">
+        <form class="col s12 offset-s2">
+            <div class="input-field col s6">
+                <form class="add-item-form">
+                    <textarea id="add-field" class="materialize-textarea"></textarea>
+                    <i class="material-icons prefix" id="add-button">mode_edit</i>
+                    <label for="add-field">Add Item to Grocery List</label>
+                </form>
+            </div>
+        </form>
     </div>
-</div>
+    <div class="row" id="list-area">
+        <!-- list of current receipt purchases -->
+        <div class="col s6">
+            <h4>Done</h4>
+            <ul>
+                {{#each Purchases}}
+                {{#unless complete}}
+                <li class="row">
+                    <div class="col s4">
+                        <!-- item name -->
+                        <p id="purchases">{{this.description}}</p>
+                    </div>
+                    <div class="col s4">
+                        <!-- price -->
+                        <p id="current-price">${{this.item_price}}</p>
+                    </div>
+                    <button class="btn-floating waves-effect hoverable waves-light btn-small"><i
+                            class="small material-icons remove-icon" id="removing-icon" data-id={{id}}
+                            data-complete={{complete}}>remove</i></button>
+                </li>
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+        <!-- list of past items -->
+        <div class="col s6">
+            <h4>Dusted</h4>
+            <ul>
+                {{#each Purchases}}
+                {{#if complete}}
+                <li class="row">
+                    <div class="col s4">
+                        <!-- item name -->
+                        <p id="previous-item">{{this.description}}</p>
+                    </div>
+                    <div class="col s4">
+                        <p id="previous-price">${{this.item_price}}</p>
+                    </div>
+                    <button class="btn-floating orange waves-effect hoverable waves-light btn-small"><i
+                            class="small material-icons add-icon" id="adding-icon" data-id={{id}}
+                            data-complete={{complete}}>add</i></button>
+                    <button class="btn-floating orange waves-effect hoverable waves-light btn-small"><i
+                            class="small material-icons delete-icon" id="deleting-icon" data-id={{id}}
+                            data-complete={{complete}}>clear</i></button>
+                </li>
+                {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</main>
 <script src="/js/grocery-list.js"></script>
 <script src="/js/uploadpic.js"></script>

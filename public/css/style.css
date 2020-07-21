@@ -1,14 +1,35 @@
 nav{
-    border-bottom: navy 10px solid;
+    border-bottom: #ee9f8b 10px solid;
     height:100px;
+    background-color:#efbb83;
+    color: #202c2d;
+    text-shadow:
+      0 1px #808d93,
+      -1px 0 #cdd2d5,
+      -1px 2px #808d93,
+      -2px 1px #cdd2d5,
+      -2px 3px #808d93,
+      -3px 2px #cdd2d5,
+      -3px 4px #808d93,
+      -4px 3px #cdd2d5,
+      -4px 5px #808d93,
+      -5px 4px #cdd2d5,
+      -5px 6px #808d93,
+      -6px 5px #cdd2d5,
+      -6px 7px #808d93,
+      -7px 6px #cdd2d5,
+      -7px 8px #808d93,
+      -8px 7px #cdd2d5;
 }
 body{
-    background-color:#25744d;
+    background-color:#b9c3a3;
+    
     color:white;
     font-family: 'Martel', serif;
 }
 h1{
     font-size:30px;
+    
 }
 #nav-logo{
     margin-top: 1rem;
@@ -17,9 +38,9 @@ h1{
 .validate{
     background-color:white;
 }
-#login-btn, #signup-btn, #submit-btn,#ajax-veryfi{
+#login-btn, #signup-btn,#ajax-veryfi{
     border-radius: 16px;
-    background-color:#ffbe42;
+    background-color:#78afb4;
 }
 #view-btn, #logout-btn,#upload-btn{
     border-radius: 16px;
@@ -31,6 +52,7 @@ h1{
 #logout-btn{
     margin-right:5rem;
     margin-top:20px;
+    /* background-color:#edb3ba; */
 }
 form{
     height: auto;
@@ -49,13 +71,17 @@ form{
 .loginbtn{
     margin-left:5rem;
     margin-top:10px;
+    border-radius:16px;
+    background-color:#78afb4;
 }
 
 #adding-icon{
     color:green;
+    background-color:#78a1a8;
 }
 #deleting-icon,#removing-icon{
     color:red;
+    background-color:#78a1a8;
 }
 
 .file-path{
@@ -87,6 +113,13 @@ form{
     margin-top:1rem;
 }
 #select-receipt{
-    background-color:#76a0ef;
+    background-color:#78a1a8;
     border-radius: 16px;
+}
+p{
+    font-size:18px;
+}
+#submit-btn{
+    border-radius:16px;
+    background-color:#78afb4;
 }
