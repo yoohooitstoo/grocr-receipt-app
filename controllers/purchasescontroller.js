@@ -54,4 +54,4 @@ router.put("/api/purchases", function (req, res) {
     });
 });
 
-module.exports = router;
+module.exports = express;
