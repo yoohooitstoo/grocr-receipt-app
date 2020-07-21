@@ -50,7 +50,7 @@
             <h5>Grocery List</h5>
             <ul>
                 {{#each Purchases}}
-                {{#if purchase}}
+                {{!-- {{#if Purchases}} --}}
                 <li>
                     <div class="col s4">
                         <!-- item name -->
@@ -63,7 +63,7 @@
                     <button class="btn-floating orange btn-small" data-id={{id}}><i class="small material-icons"
                             id="remove-icon">remove</i></button>
                 </li>
-                {{/if}}
+                {{!-- {{/if}} --}}
                 {{/each}}
             </ul>
         </div>
