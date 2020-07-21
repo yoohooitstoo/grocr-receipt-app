@@ -1,5 +1,21 @@
-$(document).ready(function () {
+$(document).ready(function() {
+  // let purchases = $("#purchases");
+// $(document).on("click", "remove-icon", removePurchases());
+// $(document).on("click", "add-icon", addPurchases());
+// $(document).on("click", "move-icon", movePurchases());
+// $(document).on("click", "edit-icon", editPurchase());
+$("#add-button").on("click", function(event){
+  event.preventDefault();
+  addPurchase()
+});
+
+$("#add-field").on("submit", function(event){
+  event.preventDefault();
+  addPurchase()
+});
+
   const $newItemInput = $("");
+
 
   $("#add-button").on("click", function (event) {
     event.preventDefault();
