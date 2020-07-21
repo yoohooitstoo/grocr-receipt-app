@@ -25,7 +25,8 @@ $(document).ready(function() {
     lastNameInput.val("");
     emailInput.val("");
     passwordInput.val("");
-  });
+    window.location.replace("./") 
+   });
 
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
@@ -37,9 +38,7 @@ $(document).ready(function() {
       password: password
     })
       .then(function(data) {
-        // console.log(data);
-        window.location.replace("/upload");
-        // If there's an error, handle it by throwing up a bootstrap alert
+        console.log(data);
       })
       .catch(handleLoginErr);
   }
@@ -52,7 +51,3 @@ $(document).ready(function() {
 });
 
 
-$("#signup-btn").on("click", function(event){
-  event.preventDefault();
-  console.log("click works")
-})

@@ -26,20 +26,20 @@
         <div class="col s2">
             <image id="storeLogoUrl"></image>
         </div>
-        <div class="col s10">
+        {{!-- <div class="col s10">
             <p id="store">Store Visited: </p>
             <ul class="purchase"> </ul>
             <p id="total">Total Cost: $</p>
-        </div>
+        </div> --}}
     </div>
 
     <div class="row center">
         <form class="col s12">
             <div class="input-field col s6">
                 <form class="add-item-form">
-                    <i class="material-icons prefix" id="add-button">mode_edit</i>
-                    <textarea id="add-text-box" class="materialize-textarea"></textarea>
-                    <label for="add-text-box">Add Item to Grocery List</label>
+                    <textarea id="add-field" class="materialize-textarea"></textarea>
+                       <i class="material-icons prefix" id="add-button">mode_edit</i>
+                    <label for="add-field">Add Item to Grocery List</label>
                 </form>
             </div>
         </form>
@@ -50,8 +50,9 @@
             <h5>Grocery List</h5>
             <ul>
                 {{#each Purchases}}
-                {{!-- {{#if Purchases}} --}}
-                <li>
+                {{#unless complete}}
+                {{!-- {{> complete=false}} --}}
+                <li class="row">
                     <div class="col s4">
                         <!-- item name -->
                         <p id="purchases">{{this.description}}</p>
@@ -60,10 +61,10 @@
                         <!-- price -->
                         <p id="current-price">${{this.item_price}}</p>
                     </div>
-                    <button class="btn-floating orange btn-small" data-id={{id}}><i class="small material-icons"
-                            id="remove-icon">remove</i></button>
+                    <button class="btn-floating orange btn-small"><i class="small material-icons remove-icon"
+                            data-id={{id}} data-complete={{complete}}>remove</i></button>
                 </li>
-                {{!-- {{/if}} --}}
+                {{/unless}}
                 {{/each}}
             </ul>
         </div>
@@ -71,9 +72,10 @@
         <div class="col s6">
             <h5>Previously Ordered</h5>
             <ul>
-                {{#each grocery}}
-                {{#unless purchase}}
-                <li>
+                {{#each Purchases}}
+                {{#if complete}}
+                {{!-- {{> complete=true}} --}}
+                <li class="row">
                     <div class="col s4">
                         <!-- item name -->
                         <p id="previous-item">{{this.description}}</p>
@@ -81,12 +83,12 @@
                     <div class="col s4">
                         <p id="previous-price">${{this.item_price}}</p>
                     </div>
-                    <button class="btn-floating orange btn-small" data-id={{id}}><i class="small material-icons"
-                            id="add-icon">add</i></button>
-                    <button class="btn-floating orange btn-small" data-id={{id}}><i class="small material-icons"
-                            id="remove-icon">remove</i></button>
+                    <button class="btn-floating orange btn-small"><i class="small material-icons add-icon" data-id={{id}} data-complete={{complete}}
+                           >add</i></button>
+                    <button class="btn-floating orange btn-small"><i class="small material-icons delete-icon"  data-id={{id}}  data-complete={{complete}}
+                            >clear</i></button>
                 </li>
-                {{/unless}}
+                {{/if}}
                 {{/each}}
             </ul>
         </div>

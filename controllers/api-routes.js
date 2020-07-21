@@ -55,21 +55,23 @@ module.exports = function(app) {
 // needs to modify to include added from the receipt
 app.get("/api/purchases", function (req, res) {
   db.Purchases.findAll({}).then(function (dbPurchases) {
-    console.log(dbPurchases);
+    // console.log(dbPurchases);
     res.json(dbPurchases);
   });
 });
 
 // Post route for saving a new purchase
 app.post("/api/purchases", function (req, res) {
-  console.log(req.body);
+  // console.log(req.body);
   db.Purchases.create({
     description: req.body.description,
+    item_price: req.body.item_price,
+    sku: req.body.sku
   })
     .then(function (data) {
-      console.log(data);
+      // console.log(data);
       db.Purchases.findAll({}).then(function (dbPurchases) {
-        console.log(dbPurchases);
+        // console.log(dbPurchases);
         res.render('grocerylist', {Purchases: dbPurchases});
       });
     })
@@ -78,7 +80,7 @@ app.post("/api/purchases", function (req, res) {
     });
 });
 // DELETE route for deleting purchases.
-app.delete("api/purchases/:id", function (req, res) {
+app.delete("/api/purchases/:id", function (req, res) {
   db.Purchases.destroy({
     where: {
       id: req.params.id,
@@ -88,14 +90,15 @@ app.delete("api/purchases/:id", function (req, res) {
   });
 });
 
-app.put("/api/purchases", function (req, res) {
-  db.Purchase.update(
+app.put("/api/purchases/:id", function (req, res) {
+  db.Purchases.update(
     {
-      description: req.body.description,
+      // description: req.body.description,
+      complete: req.body.complete,
     },
     {
       where: {
-        id: req.body.id,
+        id: req.params.id,
       },
     }
   )

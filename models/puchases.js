@@ -8,20 +8,20 @@ module.exports = function(sequelize, DataTypes) {
         }
       },
       sku: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: true,
       },
       item_price: {
-          type: DataTypes.INTEGER,
+          type: DataTypes.DECIMAL(10,2),
           allowNull: true,
       },
       complete: {
         type: DataTypes.BOOLEAN,
+
         allowNull: true,
-<<<<<<< HEAD
-=======
+  09c1cb3cfb2c23b47d0958f7248a349d6246a1a7
         default: false,
->>>>>>> 34b2b9002a703023560689392c71ae6660397bea
+        34b2b9002a703023560689392c71ae6660397bea
       }
     });
   
