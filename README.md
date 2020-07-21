@@ -1,7 +1,7 @@
 # Grocr
 ## Description 
 
-This is our second project for the GT Full Stack Flex Program. This project was created to provide a solution for your personalized grocery list! We created a website where the user can upload a receipt of their previous receipts. It will then be put into an itemized list that is modifiable. You can add items by writing them in, move them to past purchases, and delete items.
+This is our second project for the GT Full Stack Flex Program. This project was created to provide a solution for your personalized errand list! We created a website where the user can upload a receipt of their previous receipts. It will then be put into an itemized list that is modifiable. You can add items by writing them in, move them to past purchases, and delete items.
 
 
 ## Table of Contents
