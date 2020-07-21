@@ -40,6 +40,18 @@ $("#ajax-veryfi").on("click", function (e) {
         const listItem = `<li>Description: ${description} Sku: ${sku} Price: ${total} </li>`
         $(".purchase").append(listItem);
        })
+       response.line_items.forEach(item => {
+         console.log(item);
+         const newItem = {
+           description,
+           sku,
+           item_price: total,
+          }
+          $.post("/api/purchases", newItem).then(function (data) {
+            $("#purchases");
+            window.location.reload();
+          });
+       });
        $("#total").append(response.total);
         $("#store").append(response.vendor.name);
         console.log(response.vendor.vendor_logo);
