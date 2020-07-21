@@ -12,6 +12,8 @@ $("#ajax-veryfi").on("click", function (e) {
       reader.readAsDataURL(file_data);
     }
   });
+
+  $("#storeLogoUrl").attr("src", localStorage.getItem("storeurl"));
   
   function veryfiAjaxCall(name, data) {
     const settings = {
@@ -39,6 +41,7 @@ $("#ajax-veryfi").on("click", function (e) {
         const total = currentvalue.total;
         const listItem = `<li>Description: ${description} Sku: ${sku} Price: ${total} </li>`
         $(".purchase").append(listItem);
+        localStorage.setItem("storeurl", response.vendor.vendor_logo);
        })
        response.line_items.forEach(item => {
          console.log(item);
@@ -50,6 +53,7 @@ $("#ajax-veryfi").on("click", function (e) {
           $.post("/api/purchases", newItem).then(function (data) {
             console.log(data);
             window.location.reload();
+            
           })
           .catch(function(err){
             console.log(err);
@@ -58,11 +62,12 @@ $("#ajax-veryfi").on("click", function (e) {
       //  $("#total").append(response.total);
       //   $("#store").append(response.vendor.name);
       //   console.log(response.vendor.vendor_logo);
-      //   $("#storeLogoUrl").attr("src", response.vendor.vendor_logo);
+      
        })
       .catch(function (err) {
         console.log(err.responseJSON);
       });
+
   }
   
   
