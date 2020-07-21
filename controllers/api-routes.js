@@ -63,7 +63,6 @@ app.get("/api/purchases", function (req, res) {
 app.post("/api/purchases", function (req, res) {
   db.Purchases.create({
     description: req.body.description,
-    complete: req.body.complete,
   })
     .then(function (dbPurchases) {
       res.json(dbPurchases);
@@ -87,7 +86,6 @@ app.put("/api/purchases", function (req, res) {
   db.Purchase.update(
     {
       description: req.body.description,
-      complete: req.body.complete,
     },
     {
       where: {

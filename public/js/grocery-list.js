@@ -15,14 +15,13 @@ $("#add-button").on("click", function(event){
   $.get("/api/user_data").then(function(data) {
     $(".member-name").text(`${data.firstName} ${data.lastName}`);
   });  
-let purchases = [];
+// let purchases = [];
 
 getPurchases();
 
 function addPurchase() {
   let newItem = {
     description: $("#add-text-box").val().trim(),
-
   };
 
   $.post("/api/purchases", newItem)
@@ -42,7 +41,7 @@ function addPurchase() {
 
 function getPurchases() {
   $.get("/api/purchases", function(data) {
-    purchases = data;
+    description = data;
     // initializeRows();
   })
 };

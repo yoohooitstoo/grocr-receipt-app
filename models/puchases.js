@@ -15,25 +15,25 @@ module.exports = function(sequelize, DataTypes) {
           type: DataTypes.INTEGER,
           allowNull: true,
       },
-      // complete: {
-      //   type: DataTypes.BOOLEAN,
-      //   allowNull: true,
-      // }
+      complete: {
+        type: DataTypes.BOOLEAN,
+        allowNull: true,
+      }
     });
   
-    // Purchases.associate = function(models) {
+    Purchases.associate = function(models) {
 
-    //   Purchases.belongsTo(models.Grocerylist, {
-    //     foreignKey: {
-    //       allowNull: true
-    //     }
-    //   });
-    //   Purchases.belongsTo(models.Receipt, {
-    //       foreignKey: {
-    //           allowNull: true
-    //       }
-    //   })
-    // };
+      Purchases.belongsTo(models.Grocerylist, {
+        foreignKey: {
+          allowNull: true
+        }
+      });
+      Purchases.belongsTo(models.Receipt, {
+          foreignKey: {
+              allowNull: true
+          }
+      })
+    };
     return Purchases;
   };
   
