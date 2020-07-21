@@ -52,7 +52,7 @@
                 {{#each Purchases}}
                 {{#unless complete}}
                 {{!-- {{> complete=false}} --}}
-                <li>
+                <li class="row">
                     <div class="col s4">
                         <!-- item name -->
                         <p id="purchases">{{this.description}}</p>
@@ -75,7 +75,7 @@
                 {{#each Purchases}}
                 {{#if complete}}
                 {{!-- {{> complete=true}} --}}
-                <li>
+                <li class="row">
                     <div class="col s4">
                         <!-- item name -->
                         <p id="previous-item">{{this.description}}</p>
@@ -86,7 +86,7 @@
                     <button class="btn-floating orange btn-small"><i class="small material-icons add-icon" data-id={{id}} data-complete={{complete}}
                            >add</i></button>
                     <button class="btn-floating orange btn-small"><i class="small material-icons delete-icon"  data-id={{id}}  data-complete={{complete}}
-                            >remove</i></button>
+                            >clear</i></button>
                 </li>
                 {{/if}}
                 {{/each}}
