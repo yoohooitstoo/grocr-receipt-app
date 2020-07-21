@@ -8,11 +8,11 @@ module.exports = function(sequelize, DataTypes) {
         }
       },
       sku: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: true,
       },
       item_price: {
-          type: DataTypes.INTEGER,
+          type: DataTypes.DECIMAL(10,2),
           allowNull: true,
       },
       complete: {
