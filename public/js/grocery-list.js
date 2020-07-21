@@ -9,6 +9,7 @@ $("#add-button").on("click", function(event){
   addPurchase()
 })
 
+
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
   $.get("/api/user_data").then(function(data) {
@@ -19,8 +20,15 @@ let purchases = [];
 getPurchases();
 
 function addPurchase() {
+  let newItem = {
+    description: $("#add-text-box").val().trim(),
 
-  console.log($("#add-text-box").val());
+  };
+
+  $.post("/api/purchases", newItem)
+  .then(function(data){
+    console.log(data)
+  })
 }
 
 // function initializeRows() {
