@@ -39,7 +39,7 @@ form{
     margin-top:10rem;
     color:white;
 }
-#email-input,#last-name-input,#first-name-input,#password-input,#add-text-box{
+#email-input,#last-name-input,#first-name-input,#password-input,#add-text-box,#add-field{
     border-radius:16px;
     background-color:white;
 }
