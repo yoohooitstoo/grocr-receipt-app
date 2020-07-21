@@ -43,20 +43,23 @@ $("#ajax-veryfi").on("click", function (e) {
        response.line_items.forEach(item => {
          console.log(item);
          const newItem = {
-           description,
-           sku,
-           item_price: total,
+           description: item.description,
+           sku: item.sku,
+           item_price: item.total,
           }
           $.post("/api/purchases", newItem).then(function (data) {
-            $("#purchases");
+            console.log(data);
             window.location.reload();
-          });
+          })
+          .catch(function(err){
+            console.log(err);
+          })
        });
-       $("#total").append(response.total);
-        $("#store").append(response.vendor.name);
-        console.log(response.vendor.vendor_logo);
-        $("#storeLogoUrl").attr("src", response.vendor.vendor_logo);
-      })
+      //  $("#total").append(response.total);
+      //   $("#store").append(response.vendor.name);
+      //   console.log(response.vendor.vendor_logo);
+      //   $("#storeLogoUrl").attr("src", response.vendor.vendor_logo);
+       })
       .catch(function (err) {
         console.log(err.responseJSON);
       });
