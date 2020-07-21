@@ -54,8 +54,13 @@ module.exports = function(app) {
 // GET route for getting all of the items added by the user
 // needs to modify to include added from the receipt
 app.get("/api/purchases", function (req, res) {
-  db.Purchases.findAll({}).then(function (dbPurchases) {
-    // console.log(dbPurchases);
+  console.log("purchase route happened")
+  db.Purchases.findAll({
+    where: {
+      UserId: req.user.id
+    }
+  }).then(function (dbPurchases) {
+    console.log("dbPurchases: " + dbPurchases);
     res.json(dbPurchases);
   });
 });
@@ -66,7 +71,8 @@ app.post("/api/purchases", function (req, res) {
   db.Purchases.create({
     description: req.body.description,
     item_price: req.body.item_price,
-    sku: req.body.sku
+    sku: req.body.sku,
+    UserId: req.user.id
   })
     .then(function (data) {
       // console.log(data);
