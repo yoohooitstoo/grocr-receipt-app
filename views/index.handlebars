@@ -1,11 +1,9 @@
-<nav class="nav-wrapper yellow accent-4">
-    <a href="/" class="brand-logo center" id="nav-logo">Grocr</a>
+<nav class="nav-wrapper accent-4">
+    <a href="/" class="brand-logo center" id="nav-logo">Done 'n Dusted</a>
 </nav>
 
-<div class="container">
-
-    <p class="center-align" id="info-para">Get ready to save on your groceries by simply logging in and uploading your receipt. You can view your groceries
-        and modify your list to see the rough estimate of your next grocery trip!</p>
+<main class="container">
+    <p class="center-align" id="info-para"></p>
     <form class="center login">
         <div class=row>
             <p>Email</p>
@@ -13,7 +11,6 @@
         <div class="row">
             <div class="input-field col offset-s4 s4">
                 <input id="email-input" type="email" class="validate">
-                <label for="email-input">Email</label>
             </div>
         </div>
         <div class=row>
@@ -22,10 +19,9 @@
         <div class="row">
             <div class="input-field col offset-s4 s4">
                 <input id="password-input" type="password" class="validate">
-                <label for="password-input">Password</label>
             </div>
         </div>
-
+        {{!-- Buttons for Logging in or Signing up --}}
         <div class="row">
             <button class="btn center-align login-spacing" id="login-btn">Login</button>
         </div>
@@ -34,5 +30,5 @@
         </div>
 
     </form>
-</div>
+</main>
 <script src="/js/login.js"></script>
