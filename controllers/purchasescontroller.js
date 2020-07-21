@@ -2,11 +2,14 @@ const express = require("express");
 const db = require("../models");
 const router = express.Router();
 
+
 // GET route for getting all of the items added by the user
 // needs to modify to include added from the receipt
 router.get("/api/purchases", function (req, res) {
+  console.log("made it here")
   db.Purchases.findAll({}).then(function (dbPurchases) {
     res.json(dbPurchases);
+    console.log(dbPurchases)
   });
 });
 
@@ -54,4 +57,4 @@ router.put("/api/purchases", function (req, res) {
     });
 });
 
-module.exports = express;
+module.exports = router;
