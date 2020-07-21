@@ -55,6 +55,7 @@ module.exports = function(app) {
 // needs to modify to include added from the receipt
 app.get("/api/purchases", function (req, res) {
   db.Purchases.findAll({}).then(function (dbPurchases) {
+    console.log(dbPurchases);
     res.json(dbPurchases);
   });
 });
@@ -63,7 +64,6 @@ app.get("/api/purchases", function (req, res) {
 app.post("/api/purchases", function (req, res) {
   db.Purchases.create({
     description: req.body.description,
-    complete: req.body.complete,
   })
     .then(function (dbPurchases) {
       res.json(dbPurchases);
