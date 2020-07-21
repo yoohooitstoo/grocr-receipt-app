@@ -17,7 +17,7 @@ h1{
 .validate{
     background-color:white;
 }
-#login-btn, #signup-btn, #submit-btn,#select-receipt,#ajax-veryfi{
+#login-btn, #signup-btn, #submit-btn,#ajax-veryfi{
     border-radius: 16px;
     background-color:#ffbe42;
 }
@@ -50,20 +50,13 @@ form{
     margin-left:5rem;
     margin-top:10px;
 }
-/* #list-area,#form-area{
-    margin-top:10rem;
-} */
+
 #add-icon{
     color:green;
 }
 #remove-icon{
     color:red;
 }
-
-/* form.signup,
-form.login {
-  margin-top: 50px;
-} */
 
 .file-path{
     color: white;
@@ -90,9 +83,10 @@ form.login {
 .login-spacing{
     margin-bottom:1rem;
 }
-.store-info{
+.store-info,.receipt-area,#ajax-veryfi,#adding-new-items{
     margin-top:1rem;
 }
-.receipt-area{
-    margin-top:1rem;
+#select-receipt{
+    background-color:#76a0ef;
+    border-radius: 16px;
 }
