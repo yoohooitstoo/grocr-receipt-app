@@ -29,7 +29,9 @@ module.exports = function(app) {
   app.get("/grocery-list", isAuthenticated, function(req, res) {
     console.log(req.user);
     db.Purchases.findAll({
-    
+      where: {
+        UserId: req.user.id
+      }
     }).then(function (dbPurchases) {
       // console.log(dbPurchases);
       res.render('grocerylist', {Purchases: dbPurchases});

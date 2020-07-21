@@ -18,22 +18,22 @@ module.exports = function(sequelize, DataTypes) {
       complete: {
         type: DataTypes.BOOLEAN,
         default: false,
-      }
+      },
     });
   
-    // Purchases.associate = function(models) {
+    Purchases.associate = function(models) {
 
-    //   Purchases.belongsTo(models.Grocerylist, {
-    //     foreignKey: {
-    //       allowNull: true
-    //     }
-    //   });
+      Purchases.belongsTo(models.User, {
+        foreignKey: {
+          allowNull: false
+        }
+      });
     //   Purchases.belongsTo(models.Receipt, {
     //       foreignKey: {
     //           allowNull: true
     //       }
     //   })
-    // };
+    };
     return Purchases;
   };
   
