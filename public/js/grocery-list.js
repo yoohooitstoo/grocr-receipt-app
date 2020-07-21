@@ -7,7 +7,12 @@ $(document).ready(function() {
 $("#add-button").on("click", function(event){
   event.preventDefault();
   addPurchase()
-})
+});
+
+$("#add-field").on("submit", function(event){
+  event.preventDefault();
+  addPurchase()
+});
 
 
   // This file just does a GET request to figure out which user is logged in
@@ -21,7 +26,7 @@ getPurchases();
 
 function addPurchase() {
   let newItem = {
-    description: $("#add-text-box").val().trim(),
+    description: $("#add-field").val().trim(),
 
   };
 
