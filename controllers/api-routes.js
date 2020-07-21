@@ -78,7 +78,7 @@ app.post("/api/purchases", function (req, res) {
     });
 });
 // DELETE route for deleting purchases.
-app.delete("api/purchases/:id", function (req, res) {
+app.delete("/api/purchases/:id", function (req, res) {
   db.Purchases.destroy({
     where: {
       id: req.params.id,
