@@ -49,4 +49,64 @@ $("#add-field").on("submit", function(event){
       purchases = data;
     });
   }
+
+  // Moving grocery item to previous section
+  $(".remove-icon").on("click", function (event) {
+    console.log("clicked move")
+    //need to prevent default in form
+    event.preventDefault();
+    var id = $(this).data("id");
+    const complete = $(this).data("complete")
+    console.log($(this))
+    // by using put method, burger is updated
+    $.ajax("/api/purchases/" + id, {
+      type: "PUT",
+      data: {complete: !complete},
+    }).then(function () {
+      // Purchases.update({
+      //   complete: true,
+      // });
+  
+      location.reload();
+    });
+  });
+
+  $(".add-icon").on("click", function (event) {
+    console.log("clicked move")
+    //need to prevent default in form
+    event.preventDefault();
+    var id = $(this).data("id");
+    const complete = $(this).data("complete")
+    console.log($(this))
+    // by using put method, burger is updated
+    $.ajax("/api/purchases/" + id, {
+      type: "PUT",
+      data: {complete: !complete},
+    }).then(function () {
+      // Purchases.update({
+      //   complete: true,
+      // });
+  
+      location.reload();
+    });
+  });
+  $(".delete-icon").on("click", function (event) {
+    console.log("clicked move")
+    //need to prevent default in form
+    event.preventDefault();
+    var id = $(this).data("id");
+    const complete = $(this).data("complete")
+    console.log($(this))
+    // by using put method, burger is updated
+    $.ajax("/api/purchases/" + id, {
+      type: "PUT",
+      data: {complete: !complete},
+    }).then(function () {
+      // Purchases.update({
+      //   complete: true,
+      // });
+  
+      location.reload();
+    });
+  });
 });

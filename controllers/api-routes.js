@@ -88,15 +88,15 @@ app.delete("api/purchases/:id", function (req, res) {
   });
 });
 
-app.put("/api/purchases", function (req, res) {
-  db.Purchase.update(
+app.put("/api/purchases/:id", function (req, res) {
+  db.Purchases.update(
     {
-      description: req.body.description,
+      // description: req.body.description,
       complete: req.body.complete,
     },
     {
       where: {
-        id: req.body.id,
+        id: req.params.id,
       },
     }
   )

@@ -50,7 +50,8 @@
             <h5>Grocery List</h5>
             <ul>
                 {{#each Purchases}}
-                {{!-- {{#if Purchases}} --}}
+                {{#unless complete}}
+                {{!-- {{> complete=false}} --}}
                 <li>
                     <div class="col s4">
                         <!-- item name -->
@@ -60,10 +61,10 @@
                         <!-- price -->
                         <p id="current-price">${{this.item_price}}</p>
                     </div>
-                    <button class="btn-floating orange btn-small" data-id={{id}}><i class="small material-icons"
-                            id="remove-icon">remove</i></button>
+                    <button class="btn-floating orange btn-small"><i class="small material-icons remove-icon"
+                            data-id={{id}} data-complete={{complete}}>remove</i></button>
                 </li>
-                {{!-- {{/if}} --}}
+                {{/unless}}
                 {{/each}}
             </ul>
         </div>
@@ -71,8 +72,9 @@
         <div class="col s6">
             <h5>Previously Ordered</h5>
             <ul>
-                {{#each grocery}}
-                {{#unless purchase}}
+                {{#each Purchases}}
+                {{#if complete}}
+                {{!-- {{> complete=true}} --}}
                 <li>
                     <div class="col s4">
                         <!-- item name -->
@@ -81,12 +83,12 @@
                     <div class="col s4">
                         <p id="previous-price">${{this.item_price}}</p>
                     </div>
-                    <button class="btn-floating orange btn-small" data-id={{id}}><i class="small material-icons"
-                            id="add-icon">add</i></button>
-                    <button class="btn-floating orange btn-small" data-id={{id}}><i class="small material-icons"
-                            id="remove-icon">remove</i></button>
+                    <button class="btn-floating orange btn-small"><i class="small material-icons add-icon" data-id={{id}} data-complete={{complete}}
+                           >add</i></button>
+                    <button class="btn-floating orange btn-small"><i class="small material-icons delete-icon"  data-id={{id}}  data-complete={{complete}}
+                            >remove</i></button>
                 </li>
-                {{/unless}}
+                {{/if}}
                 {{/each}}
             </ul>
         </div>
