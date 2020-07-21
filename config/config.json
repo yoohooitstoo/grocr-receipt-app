@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Piglet64",
+    "password": "watkins0428",
     "database": "grocr_db",
     "host": "127.0.0.1",
     "dialect": "mysql"

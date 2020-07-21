@@ -24,8 +24,8 @@ $("#ajax-veryfi").on("click", function (e) {
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
-        'CLIENT-ID': 'vrfAnYyPg6fcrIC5GdMJ0pv3ngkav3tD47SOkUW',
-        AUTHORIZATION: 'apikey colella.peter.j:d0e350e31a8b3494cf1c70761bd44eb6'
+        'CLIENT-ID': 'vrfKw87DawYezvC395lkAI6WRlPZrg8fUZGjdoL',
+        AUTHORIZATION: 'apikey ccopeland900:2c5525d02474e4a354b176f9456e9172'
     },
       data: JSON.stringify({
         file_name: name,
