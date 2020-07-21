@@ -1,5 +1,5 @@
 <nav class="nav-wrapper yellow accent-4">
-    <a href="/" class="brand-logo center" id="nav-logo">Grocr</a>
+    <a href="/" class="brand-logo center" id="nav-logo">Done 'n Dusted</a>
     <button class="btn green right" id="logout-btn">LOGOUT</button>
 </nav>
 
@@ -25,11 +25,6 @@
     <div class="col s2">
         <image id="storeLogoUrl"></image>
     </div>
-    {{!-- <div class="col s10">
-            <p id="store">Store Visited: </p>
-            <ul class="purchase"> </ul>
-            <p id="total">Total Cost: $</p>
-        </div> --}}
 </div>
 
 <div class="row" id="adding-new-items">
@@ -46,7 +41,7 @@
 <div class="row" id="list-area">
     <!-- list of current receipt purchases -->
     <div class="col s6">
-        <h5>Grocery List</h5>
+        <h5>Done</h5>
         <ul>
             {{#each Purchases}}
             {{#unless complete}}
@@ -69,7 +64,7 @@
     </div>
     <!-- list of past items -->
     <div class="col s6">
-        <h5>Previously Ordered</h5>
+        <h5>Dusted</h5>
         <ul>
             {{#each Purchases}}
             {{#if complete}}
