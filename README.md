@@ -1,7 +1,7 @@
 # Grocr
 ## Description 
 
-This is our second project for the GT Full Stack Flex Program. This project was created to provide a solution for your personalized grocery list! We created a website where the user can upload a receipt of their previous grocery receipt. It will then be put into an itemized list that is modifiable below. You can add items, change items, move them to past purchases, and delete items.
+This is our second project for the GT Full Stack Flex Program. This project was created to provide a solution for your personalized grocery list! We created a website where the user can upload a receipt of their previous receipts. It will then be put into an itemized list that is modifiable. You can add items by writing them in, move them to past purchases, and delete items.
 
 
 ## Table of Contents
@@ -20,7 +20,7 @@ This is our second project for the GT Full Stack Flex Program. This project was 
 1. Clone the repo
 2. Open the index.html file
 
-[Heroku Link to Code](#)
+[Heroku Link to Code](https://fathomless-sands-26873.herokuapp.com/)
 
 [Link to Code](https://github.com/yoohooitstoo/grocr-receipt-app)
  
@@ -37,18 +37,18 @@ This is our second project for the GT Full Stack Flex Program. This project was 
 This project combined a lot of the things that we have learned in class. 
 It includes ....
 
-[Heroku Link to Code](#)
+[Heroku Link to Code](https://fathomless-sands-26873.herokuapp.com/)
 
 [Link to Code](https://github.com/yoohooitstoo/grocr-receipt-app).
  
-![Web Page 1](#)<br>
-![Web Page 2](#)<br>
-![Web Page 3](#)<br>
+![Web Page 1](./public/assets/signup.png)<br>
+![Web Page 2](./public/assets/login.png)<br>
+![Web Page 3](./public/assets/grocery.png)<br>
 
 
 ## Credits
 
-This was our first project for the Georgia Tech, FullStack Flex Program.
+This was our second project for the Georgia Tech, FullStack Flex Program.
 Veryfi API [https://api.veryfi.com/api/v7/partner/documents/]
 
 ## MIT_License
@@ -82,7 +82,7 @@ SOFTWARE.
 
 ## Contributing
 
-Contributors: Crystal Watkins, John Robling, Sharon Kim, and Stuart Scott (special mention: Peter Colella).
+Contributors: Crystal Watkins, John Robling, Sharon Kim, Stuart Scott, and Peter Colella.
 Not currently taking any additional contributions at this time.
 
 ## Tests
