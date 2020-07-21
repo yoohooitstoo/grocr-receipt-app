@@ -18,6 +18,10 @@ module.exports = function(sequelize, DataTypes) {
       complete: {
         type: DataTypes.BOOLEAN,
         allowNull: true,
+<<<<<<< HEAD
+=======
+        default: false,
+>>>>>>> 34b2b9002a703023560689392c71ae6660397bea
       }
     });
   
