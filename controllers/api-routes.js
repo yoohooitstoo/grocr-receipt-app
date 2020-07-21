@@ -1,6 +1,6 @@
 // Requiring our models and passport as we've configured it
-var db = require("../models");
-var passport = require("../config/passport");
+const db = require("../models");
+const passport = require("../config/passport");
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -62,11 +62,16 @@ app.get("/api/purchases", function (req, res) {
 
 // Post route for saving a new purchase
 app.post("/api/purchases", function (req, res) {
+  console.log(req.body);
   db.Purchases.create({
     description: req.body.description,
   })
-    .then(function (dbPurchases) {
-      res.json(dbPurchases);
+    .then(function (data) {
+      console.log(data);
+      db.Purchases.findAll({}).then(function (dbPurchases) {
+        console.log(dbPurchases);
+        res.render('grocerylist', {Purchases: dbPurchases});
+      });
     })
     .catch(function (err) {
       res.json(err);
